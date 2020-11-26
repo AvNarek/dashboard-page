@@ -1,0 +1,48 @@
+.home {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.home__title {
+  font-size: 2em;
+  font-weight: 500;
+  text-align: center;
+  color: #333;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.home__title span {
+  display: block;
+  font-weight: 700;
+}
+
+.home__title::after {
+  content: '';
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #4369dc, #0ba8dc);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.home__content .company__logo {
+  display: flex;
+  justify-content: center;
+}
+
+.home__content .company__logo h1 {
+  font-size: 2.5em;
+  color: #4369dc;
+}

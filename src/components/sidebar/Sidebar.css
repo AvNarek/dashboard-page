@@ -1,0 +1,156 @@
+.sidebar__content {
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 200px);
+}
+
+.items__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.item__element {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0 0.6rem 3rem;
+  margin-bottom: 0.25rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.item__element svg {
+  fill: #555;
+  margin-right: 0.7rem;
+  width: 18px;
+}
+
+.item__element:hover {
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.311);
+}
+
+.item__element-active {
+  background: linear-gradient(90deg, #4369dc, #0ba8dc);
+  color: #fff;
+  fill: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 131, 208, 0.24);
+}
+
+.item__element-active svg {
+  fill: #fff;
+}
+
+.item__element::after {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+}
+
+.item__element-active::after,
+.item__element:hover::after {
+  background: #fff;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.29);
+}
+
+.btn {
+  background: #37a0ea;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  padding: 0.5rem 0.6rem;
+}
+
+.logout {
+  align-self: center;
+}
+
+.btn__logout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 260px;
+}
+
+.btn__logout svg {
+  fill: #fff;
+  width: 19px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.locations {
+  width: 22px;
+  object-fit: cover;
+  fill: green;
+}
+
+.sidebar__menu {
+  width: 32px;
+  height: 26px;
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.4s;
+  left: 20px;
+  top: 20px;
+}
+
+.sidebar__menu span {
+  width: 100%;
+  height: 3px;
+  display: block;
+  background-color: #0ba8dc;
+  transition: all 0.4s;
+  pointer-events: none;
+}
+.sidebar__menu span:nth-child(2) {
+  margin: 8px 0;
+}
+
+.sidebar__menu-active span:nth-child(2) {
+  opacity: 0;
+  margin: 0;
+}
+
+.sidebar__menu-active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.sidebar__menu-active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.sidebar__menu-active {
+  left: 320px;
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    position: sticky;
+  }
+  .sidebar__content {
+    position: absolute;
+    transition: all 0.4s;
+    left: -100%;
+  }
+  .sidebar__menu {
+    display: block;
+  }
+  .active {
+    display: block;
+    left: 0;
+  }
+}

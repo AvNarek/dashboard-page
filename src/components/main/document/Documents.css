@@ -1,0 +1,122 @@
+.documents {
+  padding: 1rem;
+}
+
+.document__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #eff4ff;
+  border-radius: 3px;
+  padding: 0.8rem 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.filter__group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select__box {
+  position: relative;
+}
+
+.select__box select {
+  background: #fff;
+  padding: 0.7rem 0.6rem;
+  width: 160px;
+  border: none;
+  margin-right: 0.8rem;
+  border-radius: 12px;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.12);
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+.select__box::before {
+  content: '⯆';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-30%);
+  right: -10px;
+  width: 50px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.btn__search {
+  padding: 0.4rem 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
+  font-size: 15px;
+  display: inline-block;
+}
+
+.search__form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search__label {
+  position: absolute;
+  background-color: #37a0ea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.search__label-open {
+  padding: 0;
+  right: 10px;
+
+  background-color: transparent;
+  transition: all 0.4s;
+}
+
+.search__label-open svg {
+  fill: #37a0ea;
+}
+
+.search__input {
+  border: none;
+  outline: none;
+  border-radius: 13px;
+  padding: 0.6rem;
+  width: 0;
+  transition: all 0.5s;
+  opacity: 0;
+  padding: 0.7rem;
+}
+
+.search__input-open {
+  width: 130px;
+  box-shadow: 0px 0px 4px rgba(55, 160, 234, 0.32);
+  transition: all 0.5s;
+  opacity: 1;
+}
+
+.upload__form label {
+  border-radius: 13px;
+  font-size: 15px;
+}
+
+@media (max-width: 992px) {
+  .documents {
+    padding: 0.6rem;
+  }
+  .document__top {
+    padding: 0.7rem 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}

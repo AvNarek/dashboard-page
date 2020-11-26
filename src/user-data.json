@@ -1,0 +1,147 @@
+{
+  "user": {
+    "name": "Carolina Mayer",
+    "position": "Company Super Admin",
+    "age": 33,
+    "imgUrl": "C:/Users/Narek/Documents/projects/web/react-app/my-app/src/user-page/man.png"
+  },
+  "company": "Best Company",
+  "documents": [
+    {
+      "id": 1,
+      "name": "task1",
+      "tipe": "pdf",
+      "date": "08.10.2019",
+      "status": true
+    },
+    {
+      "id": 2,
+      "name": "task",
+      "tipe": "word",
+      "date": "07.11.2018",
+      "status": true
+    },
+    {
+      "id": 3,
+      "name": "task",
+      "tipe": "pdf",
+      "date": "15.10.2019",
+      "status": true
+    },
+    {
+      "id": 4,
+      "name": "task",
+      "tipe": "pdf",
+      "date": "06.02.2020",
+      "status": false
+    },
+    {
+      "id": 5,
+      "name": "task",
+      "tipe": "pdf",
+      "date": "12.16.2017",
+      "status": true
+    },
+    {
+      "id": 6,
+      "name": "task",
+      "tipe": "word",
+      "date": "09.15.2019",
+      "status": true
+    },
+    {
+      "id": 7,
+      "name": "task",
+      "tipe": "word",
+      "date": "08.10.2019",
+      "status": true
+    },
+    {
+      "id": 8,
+      "name": "task",
+      "tipe": "word",
+      "date": "08.10.2019",
+      "status": true
+    },
+    {
+      "id": 9,
+      "name": "task",
+      "tipe": "pdf",
+      "date": "08.10.2019",
+      "status": false
+    },
+    {
+      "id": 10,
+      "name": "task",
+      "tipe": "pdf",
+      "date": "08.10.2019",
+      "status": true
+    },
+    {
+      "id": 11,
+      "name": "task",
+      "tipe": "xlsx",
+      "date": "08.10.2019",
+      "status": true
+    },
+    {
+      "id": 12,
+      "name": "task",
+      "tipe": "pdf",
+      "date": "08.10.2019",
+      "status": false
+    },
+    {
+      "id": 13,
+      "name": "task",
+      "tipe": "xlsx",
+      "date": "08.10.2019",
+      "status": true
+    },
+    {
+      "id": 14,
+      "name": "task",
+      "tipe": "xlsx",
+      "date": "08.10.2019",
+      "status": true
+    },
+    {
+      "id": 15,
+      "name": "task",
+      "tipe": "pdf",
+      "date": "08.10.2019",
+      "status": true
+    },
+    {
+      "id": 16,
+      "name": "task1",
+      "tipe": "pdf",
+      "date": "08.10.2019",
+      "status": true
+    },
+    {
+      "id": 17,
+      "name": "task",
+      "tipe": "word",
+      "date": "07.11.2018",
+      "status": true
+    },
+    {
+      "id": 18,
+      "name": "task",
+      "tipe": "pdf",
+      "date": "15.10.2019",
+      "status": true
+    },
+    {
+      "id": 19,
+      "name": "task",
+      "tipe": "pdf",
+      "date": "06.02.2020",
+      "status": false
+    }
+  ],
+  "activePage": "home",
+  "contacts": [],
+  "recordings": []
+}

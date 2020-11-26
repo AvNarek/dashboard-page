@@ -1,0 +1,94 @@
+.header {
+  padding: 1.5rem;
+  padding-bottom: 2.5rem;
+  background: linear-gradient(90deg, #4369dc, #0ba8dc);
+}
+
+.nav__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company__logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  width: 26px;
+}
+
+.company__logo img {
+  width: 100%;
+}
+
+.company__logo h2 {
+  font-size: 24px;
+}
+
+.item__list {
+  list-style-type: none;
+}
+
+.item__list li {
+  border-left: 1px solid #cddc39;
+  display: inline-block;
+  padding: 0 0.8rem;
+}
+
+.item__list li:first-child {
+  border-left: none;
+}
+
+.item__list a {
+  text-decoration: none;
+}
+.item__list a img {
+  width: 23px;
+  fill: white;
+}
+
+.list__element:hover svg circle {
+  fill: transparent;
+}
+
+.user__info {
+  margin-top: 2.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.user__photo {
+  width: 45px;
+  margin-right: 0.5rem;
+}
+
+.user__photo img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.user__name {
+  color: white;
+  margin: 0;
+  margin-bottom: 0.3rem;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.user__position {
+  color: #ccc;
+  font-size: 15px;
+  margin: 0;
+  margin-left: 0.2rem;
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .company__logo h2 {
+    font-size: 22px;
+  }
+}
