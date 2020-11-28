@@ -14,6 +14,7 @@ const Documents = () => {
   } = useContext(UserContext);
   const [items, setItems] = useState(documents);
   const [active, setActive] = useState(false);
+  const [error, setError] = useState(false);
 
   const searchItems = (e) => {
     const value = e.target.value;
@@ -41,6 +42,28 @@ const Documents = () => {
 
   const deleteItem = (itemId) => {
     setItems(items.filter(({ id }) => id !== itemId));
+  };
+
+  const createNewFile = (e) => {
+    if (!e.target.value) return;
+    const fileFormat = e.target.value.match(/(\w+)\.(\w+)/)[2];
+    const fileName = e.target.value.match(/(\w+)\.(\w+)/)[1];
+    const dateFormat = new Date().toLocaleDateString().replace(/\//g, '.');
+
+    if (fileFormat !== ('pdf' || 'xlsx' || 'word')) {
+      setError(true);
+    } else {
+      const newFile = {
+        id: Math.random(),
+        name: fileName,
+        tipe: fileFormat,
+        date: dateFormat,
+        status: true,
+      };
+      setItems(items.concat(newFile));
+      setError(false);
+    }
+    e.target.value = '';
   };
 
   return (
@@ -82,10 +105,13 @@ const Documents = () => {
           </div>
         </div>
         <div className="upload__form">
-          <label htmlFor="upload" className="btn">
+          <label
+            htmlFor="upload"
+            className={`btn btn__label ${error && 'danger'}`}
+          >
             Upload document
           </label>
-          <input type="file" id="upload" hidden />
+          <input type="file" id="upload" hidden onChange={createNewFile} />
         </div>
       </div>
       <DocumentList documents={items} deleteItem={deleteItem} />

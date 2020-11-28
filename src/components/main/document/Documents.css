@@ -111,9 +111,14 @@
   opacity: 1;
 }
 
-.upload__form label {
+.btn__label {
   border-radius: 13px;
   font-size: 15px;
+  border: 2px solid transparent;
+}
+
+.danger {
+  border-color: tomato;
 }
 
 @media (max-width: 992px) {
