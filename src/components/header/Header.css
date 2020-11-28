@@ -51,6 +51,12 @@
   fill: transparent;
 }
 
+.not__logo {
+  width: 23px;
+  height: 23px;
+  fill: #fff;
+}
+
 .user__info {
   margin-top: 2.2rem;
   display: flex;

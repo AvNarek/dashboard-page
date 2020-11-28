@@ -104,6 +104,10 @@
   fill: #c4c4c4;
 }
 
+.btn__dot svg circle {
+  pointer-events: none;
+}
+
 .btn__dot svg:hover {
   fill: #333;
 }

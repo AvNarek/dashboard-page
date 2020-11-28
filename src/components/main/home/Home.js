@@ -1,4 +1,4 @@
-import logo from '../../../assets/icons/xing.png';
+import logo from '../../../assets/images/xing.png';
 
 import './Home.css';
 

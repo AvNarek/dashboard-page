@@ -1,10 +1,10 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { UserContext } from '../../../userContext';
 import { useContext } from 'react';
 
 import DocumentList from './document-list/DocumentList';
 
-import Loupe from './loupe.js';
+import { ReactComponent as Loupe } from './loupe.svg';
 
 import './Documents.css';
 
@@ -13,13 +13,7 @@ const Documents = () => {
     data: { documents },
   } = useContext(UserContext);
   const [items, setItems] = useState(documents);
-
-  const inputRef = useRef();
-
-  const toggleInput = (e) => {
-    inputRef.current.classList.add('search__input-open');
-    e.target.closest('.search__label').classList.add('search__label-open');
-  };
+  const [active, setActive] = useState(false);
 
   const searchItems = (e) => {
     const value = e.target.value;
@@ -75,13 +69,12 @@ const Documents = () => {
             <input
               id="search__input"
               type="text"
-              ref={inputRef}
-              className="search__input"
+              className={`search__input ${active && 'search__input-open'}`}
               onChange={searchItems}
             />
             <label
-              onClick={toggleInput}
-              className="search__label"
+              onClick={() => setActive(!active)}
+              className={`search__label ${active && 'search__label-open'}`}
               htmlFor="search__input"
             >
               <Loupe />

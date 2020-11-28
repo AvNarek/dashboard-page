@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Icons from '../../../../assets/icons/icons';
 import { ReactComponent as DotButton } from './menu.svg';
@@ -17,13 +17,15 @@ const DocumentList = ({ documents, deleteItem }) => {
   const buttonCount = Math.ceil(itemCount / pageItemCount);
   let count;
 
-  const changeActivePage = (e) => {
-    document
-      .querySelector('.btn__page-active')
-      .classList.remove('btn__page-active');
-    e.target.classList.add('btn__page-active');
-    setActivePage(e.target.id);
-  };
+  useEffect(() => {
+    for (let button of btnRef.current.children) {
+      if (+button.id === activePage) {
+        button.classList.add('btn__page-active');
+      } else {
+        button.classList.remove('btn__page-active');
+      }
+    }
+  }, [activePage]);
 
   const createButtons = () => {
     let buttons = [];
@@ -31,11 +33,9 @@ const DocumentList = ({ documents, deleteItem }) => {
     for (let i = 1; i <= buttonCount; i++) {
       buttons.push(
         <button
-          className={`btn btn__page ${
-            i === activePage ? 'btn__page-active' : ''
-          }`}
+          className="btn btn__page"
           id={i}
-          onClick={changeActivePage}
+          onClick={(e) => setActivePage(+e.target.id)}
           key={i}
         >
           {i}
@@ -67,13 +67,7 @@ const DocumentList = ({ documents, deleteItem }) => {
   };
 
   const toggleBox = (e) => {
-    let boxElement;
-    if (e.target.nodeName === 'svg') {
-      boxElement = e.target.previousElementSibling;
-    } else {
-      boxElement = e.target.closest('svg').previousElementSibling;
-    }
-    boxElement.classList.toggle('actions__box-active');
+    e.target.nextElementSibling.classList.toggle('actions__box-active');
   };
 
   const renderList = showList(documents).map(
@@ -88,18 +82,18 @@ const DocumentList = ({ documents, deleteItem }) => {
         </td>
         <td>{date}</td>
         <td>
-          <span className={`status ${!status ? 'status__deactive' : ''}`}>
+          <span className={`status ${!status && 'status__deactive'}`}>
             {status ? 'Active' : 'Deactive'}
           </span>
         </td>
         <td>
           <div className="btn__dot">
+            <DotButton onClick={toggleBox} />
             <div className="actions__box">
               <button className="btn__delete" onClick={() => deleteItem(id)}>
                 Delete
               </button>
             </div>
-            <DotButton onClick={toggleBox} />
           </div>
         </td>
       </tr>
@@ -125,7 +119,8 @@ const DocumentList = ({ documents, deleteItem }) => {
               onKeyUp={(e) => {
                 e.key === 'Enter' &&
                   e.target.value <= buttonCount &&
-                  setActivePage(e.target.value);
+                  e.target.value >= 1 &&
+                  setActivePage(+e.target.value);
               }}
             />
           </div>

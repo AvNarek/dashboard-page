@@ -15,7 +15,7 @@ const Icons = ({ id }) => {
           <path d="M445.092,42.73H343.973l116.176,105.636v-90.58C460.149,49.471,453.408,42.73,445.092,42.73z" />
         </svg>
       );
-    case 'document':
+    case 'documents':
       return (
         <svg viewBox="0 0 507.177 507.177">
           <path
@@ -27,7 +27,7 @@ const Icons = ({ id }) => {
           />
         </svg>
       );
-    case 'contact':
+    case 'contacts':
       return (
         <svg viewBox="0 0 512 512">
           <path
@@ -38,7 +38,7 @@ const Icons = ({ id }) => {
           />
         </svg>
       );
-    case 'recording':
+    case 'recordings':
       return (
         <svg viewBox="0 0 435.2 435.2">
           <path
@@ -69,7 +69,7 @@ const Icons = ({ id }) => {
           <path d="m151.5625 174.21875c9.257812-9.605469 15.542969-22.078125 17.382812-35.941406h-34.761718c1.839844 13.863281 8.128906 26.335937 17.378906 35.941406zm0 0" />
         </svg>
       );
-    case 'location':
+    case 'locations':
       return (
         <svg viewBox="0 0 512 512">
           <path

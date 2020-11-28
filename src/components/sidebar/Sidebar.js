@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import './Sidebar.css';
 
@@ -6,23 +6,39 @@ import Icons from '../../assets/icons/icons';
 import { useContext } from 'react';
 import { UserContext } from '../../userContext';
 
+const SIDEBAR__ITEMS = [
+  'home',
+  'documents',
+  'contacts',
+  'recordings',
+  'user',
+  'interpreter',
+  'locations',
+];
+
 const Sidebar = () => {
-  const history = useHistory();
   const { hamburger, toggleHamburger, logout } = useContext(UserContext);
 
-  const changeActiveItem = (e) => {
-    e.preventDefault();
-    toggleHamburger();
-    if (
-      !e.target.classList.contains('item__element-active') &&
-      e.target.nodeName === 'LI'
-    ) {
-      for (let item of e.target.parentNode.children) {
-        item.classList.remove('item__element-active');
-      }
-      e.target.classList.add('item__element-active');
-      history.push(`/${e.target.dataset.name}`);
-    }
+  const createSidebarList = () => {
+    const items = SIDEBAR__ITEMS.map((item) => {
+      const name =
+        item === 'user' || item === 'interpreter' ? item + ' management' : item;
+
+      return (
+        <li key={name}>
+          <NavLink
+            className="item__element"
+            activeClassName="item__element-active"
+            to={item}
+            onClick={toggleHamburger}
+          >
+            <Icons id={item} />
+            {name}
+          </NavLink>
+        </li>
+      );
+    });
+    return items;
   };
 
   return (
@@ -37,36 +53,7 @@ const Sidebar = () => {
       </div>
       <div className={`sidebar__content ${hamburger && 'active'}`}>
         <div className="sidebar__items">
-          <ul className="items__list" onClick={changeActiveItem}>
-            <li className="item__element item__element-active" data-name="home">
-              <Icons id="home" />
-              Home
-            </li>
-            <li className="item__element" data-name="documents">
-              <Icons id="document" />
-              Documents
-            </li>
-            <li className="item__element" data-name="contacts">
-              <Icons id="contact" />
-              Contacts
-            </li>
-            <li className="item__element" data-name="recordings">
-              <Icons id="recording" />
-              Recordings
-            </li>
-            <li className="item__element" data-name="user-management">
-              <Icons id="user" />
-              User Management
-            </li>
-            <li className="item__element" data-name="interpreter-management">
-              <Icons id="interpreter" />
-              Interpreter Management
-            </li>
-            <li className="item__element" data-name="locations">
-              <Icons id="location" />
-              Locations
-            </li>
-          </ul>
+          <ul className="items__list">{createSidebarList()}</ul>
         </div>
         <div className="logout">
           <button onClick={logout} className="btn btn__logout">

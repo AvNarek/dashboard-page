@@ -1,12 +1,13 @@
+import { Link } from 'react-router-dom';
 import { UserContext } from '../../userContext';
 import { useContext } from 'react';
 
 import informationLogo from './information.svg';
 import settingsLogo from './settings.svg';
-import NotLogo from './notification';
+import { ReactComponent as Notification } from './notification.svg';
 
 import man from '../../assets/images/man.png';
-import logo from '../../assets/icons/xing.png';
+import logo from '../../assets/images/xing.png';
 import './Header.css';
 
 const Header = () => {
@@ -23,19 +24,19 @@ const Header = () => {
         </div>
         <ul className="item__list">
           <li>
-            <a href="/settings">
+            <Link to="/info">
               <img src={informationLogo} alt="information" />
-            </a>
+            </Link>
           </li>
           <li className="list__element">
-            <a href="/notification">
-              <NotLogo />
-            </a>
+            <Link to="/notification">
+              <Notification className="not__logo" />
+            </Link>
           </li>
           <li>
-            <a href="/settings">
+            <Link to="/settings">
               <img src={settingsLogo} alt="settings" />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

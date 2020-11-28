@@ -76,6 +76,11 @@
   transition: all 0.4s;
 }
 
+.search__label svg {
+  width: 22px;
+  fill: #fff;
+}
+
 .search__label-open {
   padding: 0;
   right: 10px;
